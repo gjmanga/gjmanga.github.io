@@ -1,6 +1,6 @@
 {
-  "name": "把本網站加到啟動器上，享受離線閱讀漫畫的樂趣！",
-  "short_name": "Jap Manga",
+  "name": "Jap Manga Club",
+  "short_name": "JapManga",
   "icons": [
     {
       "src": "/static/img/icons/android-chrome-192x192.png",
