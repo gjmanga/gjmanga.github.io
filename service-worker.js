@@ -2,25 +2,28 @@ importScripts('workbox-sw.prod.v2.1.1.js')
 
 // Create Workbox service worker instance
 const workboxSW = new WorkboxSW({ clientsClaim: true })
-const cacheFirstStrategy = workboxSW.strategies.cacheFirst({cacheableResponse: {statuses: [0, 200]}});
+const cacheFirstStrategy = workboxSW.strategies.cacheFirst({cacheExpiration: {
+      maxEntries: 2147483647,
+      maxAgeSeconds: 2147483647
+    }, cacheableResponse: {statuses: [0, 200]}});
 
 // Placeholder array which is populated automatically by workboxBuild.injectManifest()
 workboxSW.precache([
   {
     "url": "/index.html",
-    "revision": "ad02f2988db681dabf31aca4c95b6a44"
+    "revision": "2e21ee29b6ab1b87eedd67976199d556"
   },
   {
     "url": "service-worker.js",
-    "revision": "61ad3cbe83c9714bddf1370978714ad4"
+    "revision": "e3c4cac3f27d545ff5d4e7bb9e270213"
   },
   {
     "url": "/static/crypt.js",
     "revision": "ecefb8bbbdab4c01e39588d3f12b2e28"
   },
   {
-    "url": "/static/css/app.84bf9606ca0fed41f65be2e5863abcce.css",
-    "revision": "84bf9606ca0fed41f65be2e5863abcce"
+    "url": "/static/css/app.d48922fa174e5c729206b5ac8f077652.css",
+    "revision": "d48922fa174e5c729206b5ac8f077652"
   },
   {
     "url": "/static/img/icons/android-chrome-192x192.png",
@@ -71,12 +74,12 @@ workboxSW.precache([
     "revision": "744b3f2c9bc3f0b7339082d73954177f"
   },
   {
-    "url": "/static/js/app.f7292c4333f837887962.js",
-    "revision": "e415195f93246b4d6c8cab63fbbb9863"
+    "url": "/static/js/app.1ec3aab6b6c65bca69ad.js",
+    "revision": "4977d8433e07ec2f5f6004c526ba1e6b"
   },
   {
-    "url": "/static/js/manifest.8d104e89c952adefbe65.js",
-    "revision": "8b79b1a02212977e57b4d260a2dfb0ef"
+    "url": "/static/js/manifest.bdc772b6700e83c002f8.js",
+    "revision": "c56a1e5e265ba585bd8d60af1ce41300"
   },
   {
     "url": "/static/js/vendor.79d79b0dd0c8e1ee7a00.js",
@@ -104,8 +107,8 @@ self.addEventListener('push', function(event) {
   const title = 'Manga';
   const options = {
     body: 'New Manga has been uploaded.',
-    icon: 'images/icon.png',
-    badge: 'images/badge.png'
+    icon: 'static/img/icons/android-chrome-512x512.png',
+    badge: 'static/img/icons/android-chrome-512x512.png'
   };
   
   const notificationPromise = self.registration.showNotification(title, options);
