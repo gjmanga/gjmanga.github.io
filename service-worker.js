@@ -2,28 +2,35 @@ importScripts('workbox-sw.prod.v2.1.1.js')
 
 // Create Workbox service worker instance
 const workboxSW = new WorkboxSW({ clientsClaim: true })
-const cacheFirstStrategy = workboxSW.strategies.cacheFirst({cacheExpiration: {
-      maxEntries: 2147483647,
-      maxAgeSeconds: 2147483647
-    }, cacheableResponse: {statuses: [0, 200]}});
+const cacheParams = (name) => {
+return {
+    cacheName: name,
+    cacheExpiration: {
+        maxEntries: 2147483647,
+        maxAgeSeconds: 2147483647
+    }, cacheableResponse: {statuses: [0, 200]}}
+}
+const cacheFirstStrategy = (name) => workboxSW.strategies.cacheFirst(cacheParams(name))
+const networkFirstStrategy = (name) => workboxSW.strategies.networkFirst(cacheParams(name))
+
 
 // Placeholder array which is populated automatically by workboxBuild.injectManifest()
 workboxSW.precache([
   {
     "url": "/index.html",
-    "revision": "2e21ee29b6ab1b87eedd67976199d556"
+    "revision": "0fc83a95c515f4219fbcc525956c753d"
   },
   {
     "url": "service-worker.js",
-    "revision": "e3c4cac3f27d545ff5d4e7bb9e270213"
+    "revision": "ec5e5d5cbed4712a1cdffbd460df2330"
   },
   {
     "url": "/static/crypt.js",
     "revision": "ecefb8bbbdab4c01e39588d3f12b2e28"
   },
   {
-    "url": "/static/css/app.d48922fa174e5c729206b5ac8f077652.css",
-    "revision": "d48922fa174e5c729206b5ac8f077652"
+    "url": "/static/css/app.eb8a9283ead4f4d743c99fc48ea0c596.css",
+    "revision": "eb8a9283ead4f4d743c99fc48ea0c596"
   },
   {
     "url": "/static/img/icons/android-chrome-192x192.png",
@@ -74,12 +81,12 @@ workboxSW.precache([
     "revision": "744b3f2c9bc3f0b7339082d73954177f"
   },
   {
-    "url": "/static/js/app.1ec3aab6b6c65bca69ad.js",
-    "revision": "4977d8433e07ec2f5f6004c526ba1e6b"
+    "url": "/static/js/app.d4de700545a1405eb544.js",
+    "revision": "b193f290e780a7e74b117886a629117c"
   },
   {
-    "url": "/static/js/manifest.bdc772b6700e83c002f8.js",
-    "revision": "c56a1e5e265ba585bd8d60af1ce41300"
+    "url": "/static/js/manifest.83bd081c9a8c7d72a062.js",
+    "revision": "99ec2117f4d0b3940417cb2ea7dbba61"
   },
   {
     "url": "/static/js/vendor.79d79b0dd0c8e1ee7a00.js",
@@ -92,21 +99,21 @@ workboxSW.precache([
 ])
 
 
-workboxSW.router.registerRoute(/^https:\/\/fonts\.googleapis\.com\//, cacheFirstStrategy)
-workboxSW.router.registerRoute(/^https:\/\/fonts\.gstatic\.com\//, cacheFirstStrategy)
-workboxSW.router.registerRoute(/^https:\/\/code\.getmdl\.io\//, cacheFirstStrategy)
-workboxSW.router.registerRoute(/^https:\/\/(.+)\.(.+)\.blogspot\.com\//, cacheFirstStrategy)
-workboxSW.router.registerRoute(/^http:\/\/(.+)\.(.+)\.blogspot\.com\//, cacheFirstStrategy)
-workboxSW.router.registerRoute('https://www.googleapis.com/(.*)', cacheFirstStrategy)
-workboxSW.router.registerRoute('http://www.googleapis.com/(.*)', cacheFirstStrategy)
+workboxSW.router.registerRoute(/^https:\/\/fonts\.googleapis\.com\//, cacheFirstStrategy('static-resource'))
+workboxSW.router.registerRoute(/^https:\/\/fonts\.gstatic\.com\//, cacheFirstStrategy('static-resource'))
+workboxSW.router.registerRoute(/^https:\/\/code\.getmdl\.io\//, cacheFirstStrategy('static-resource'))
+workboxSW.router.registerRoute(/^https:\/\/(.+)\.(.+)\.blogspot\.com\//, cacheFirstStrategy('manga-images'))
+workboxSW.router.registerRoute(/^http:\/\/(.+)\.(.+)\.blogspot\.com\//, cacheFirstStrategy('manga-images'))
+workboxSW.router.registerRoute('https://www.googleapis.com/(.*)', networkFirstStrategy('blog-content'))
+workboxSW.router.registerRoute('http://www.googleapis.com/(.*)', networkFirstStrategy('blog-content'))
 
 self.addEventListener('push', function(event) {
   console.log('[Service Worker] Push Received.');
   console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
 
-  const title = 'Manga';
+  const title = 'Jap Manga Club';
   const options = {
-    body: 'New Manga has been uploaded.',
+    body: '新漫畫上架！點此瀏覽更多',
     icon: 'static/img/icons/android-chrome-512x512.png',
     badge: 'static/img/icons/android-chrome-512x512.png'
   };
