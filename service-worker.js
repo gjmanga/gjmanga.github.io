@@ -18,19 +18,19 @@ const networkFirstStrategy = (name) => workboxSW.strategies.networkFirst(cachePa
 workboxSW.precache([
   {
     "url": "/index.html",
-    "revision": "0fc83a95c515f4219fbcc525956c753d"
+    "revision": "729ef60a483533576a9f5bde4d53e0de"
   },
   {
     "url": "service-worker.js",
-    "revision": "ec5e5d5cbed4712a1cdffbd460df2330"
+    "revision": "b206fc56cd8848e6c9571ded0b22b131"
   },
   {
     "url": "/static/crypt.js",
     "revision": "ecefb8bbbdab4c01e39588d3f12b2e28"
   },
   {
-    "url": "/static/css/app.eb8a9283ead4f4d743c99fc48ea0c596.css",
-    "revision": "eb8a9283ead4f4d743c99fc48ea0c596"
+    "url": "/static/css/app.fb515e789133e9bce414d3b7592673e0.css",
+    "revision": "fb515e789133e9bce414d3b7592673e0"
   },
   {
     "url": "/static/img/icons/android-chrome-192x192.png",
@@ -81,12 +81,12 @@ workboxSW.precache([
     "revision": "744b3f2c9bc3f0b7339082d73954177f"
   },
   {
-    "url": "/static/js/app.d4de700545a1405eb544.js",
-    "revision": "b193f290e780a7e74b117886a629117c"
+    "url": "/static/js/app.45b44302a74982ebf5c2.js",
+    "revision": "d471e5e5341bea34ed0fbdc20bb3a9d1"
   },
   {
-    "url": "/static/js/manifest.83bd081c9a8c7d72a062.js",
-    "revision": "99ec2117f4d0b3940417cb2ea7dbba61"
+    "url": "/static/js/manifest.84350801242a2ee3912b.js",
+    "revision": "ccc4500c3888bbab9cc99a371fcf2062"
   },
   {
     "url": "/static/js/vendor.79d79b0dd0c8e1ee7a00.js",
