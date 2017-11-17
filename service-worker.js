@@ -18,15 +18,11 @@ const networkFirstStrategy = (name) => workboxSW.strategies.networkFirst(cachePa
 workboxSW.precache([
   {
     "url": "/index.html",
-    "revision": "e1860538f8eaf84bb3c97501f05bce3d"
+    "revision": "2724c5735bcc82e73853a9853bbc256f"
   },
   {
     "url": "service-worker.js",
-    "revision": "41e82595afbf3613749f3705cf65202f"
-  },
-  {
-    "url": "/static/crypt.js",
-    "revision": "ecefb8bbbdab4c01e39588d3f12b2e28"
+    "revision": "26cefd3a1625f7ae82b4b1f0ea349916"
   },
   {
     "url": "/static/css/app.af99399dfde16589d7d218c8c901199f.css",
@@ -81,16 +77,16 @@ workboxSW.precache([
     "revision": "744b3f2c9bc3f0b7339082d73954177f"
   },
   {
-    "url": "/static/js/app.5aa257334e6c668283d6.js",
-    "revision": "97895d1d34f5a32e3a2bc485c7ec47ed"
+    "url": "/static/js/app.b80136c3b98fde490c68.js",
+    "revision": "0bea0ba90ad8a7002dc7bdff357558b0"
   },
   {
-    "url": "/static/js/manifest.3560f5ac7389010a5d5a.js",
-    "revision": "74cd9baed88500df8d04e7bfec7173a8"
+    "url": "/static/js/manifest.c13cc96ee13517284d2e.js",
+    "revision": "5e9686718f7b21f4c1963c225dd124cf"
   },
   {
-    "url": "/static/js/vendor.512e1d71c222e2230e5d.js",
-    "revision": "9713b6f1f53c23d814cf43033439714f"
+    "url": "/static/js/vendor.cf4828635cd17c820112.js",
+    "revision": "3a692c93e72451bf5b3583304add611a"
   },
   {
     "url": "workbox-sw.prod.v2.1.1.js",
