@@ -18,11 +18,11 @@ const networkFirstStrategy = (name) => workboxSW.strategies.networkFirst(cachePa
 workboxSW.precache([
   {
     "url": "/index.html",
-    "revision": "2724c5735bcc82e73853a9853bbc256f"
+    "revision": "4a86358f5e1cb0f9158402bf9045cbc4"
   },
   {
     "url": "service-worker.js",
-    "revision": "26cefd3a1625f7ae82b4b1f0ea349916"
+    "revision": "41413a924e6024f21d7233ab9cf778ce"
   },
   {
     "url": "/static/css/app.af99399dfde16589d7d218c8c901199f.css",
@@ -77,12 +77,12 @@ workboxSW.precache([
     "revision": "744b3f2c9bc3f0b7339082d73954177f"
   },
   {
-    "url": "/static/js/app.b80136c3b98fde490c68.js",
-    "revision": "0bea0ba90ad8a7002dc7bdff357558b0"
+    "url": "/static/js/app.49070ae14faa6185c5be.js",
+    "revision": "93a2255a962c8052ab00baf0bcda4aef"
   },
   {
-    "url": "/static/js/manifest.c13cc96ee13517284d2e.js",
-    "revision": "5e9686718f7b21f4c1963c225dd124cf"
+    "url": "/static/js/manifest.2ec7c1cd8cc74f28e08b.js",
+    "revision": "d7b47c75d78870da7d4eb4ba6d348a2c"
   },
   {
     "url": "/static/js/vendor.cf4828635cd17c820112.js",
