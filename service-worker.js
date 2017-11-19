@@ -21,8 +21,16 @@ workboxSW.precache([
     "revision": "4a86358f5e1cb0f9158402bf9045cbc4"
   },
   {
+    "url": "OneSignalSDKUpdaterWorker.js",
+    "revision": "a4f31b84d594856359f740d4fa3f088d"
+  },
+  {
+    "url": "OneSignalSDKWorker.js",
+    "revision": "a4f31b84d594856359f740d4fa3f088d"
+  },
+  {
     "url": "service-worker.js",
-    "revision": "41413a924e6024f21d7233ab9cf778ce"
+    "revision": "743d1ec764400dbbf5fb536203335472"
   },
   {
     "url": "/static/css/app.af99399dfde16589d7d218c8c901199f.css",
